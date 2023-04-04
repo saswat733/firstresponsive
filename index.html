@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring the Outdoors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            /* background-color: black; */
+            align-items: center;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+            height: 60px;
+
+        }
+
+        .leftnav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            padding: 10px;
+            /* width: 70px; */
+            /* justify-content: center;
+              */
+
+        }
+
+        ul li {
+            /* margin: 10px;
+             */
+
+        }
+
+        ul li a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: white;
+            padding: 10px;
+
+        }
+
+        ul li a:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            border-radius: 20px;
+
+        }
+
+        .leftnav ul img {
+            width: 40px;
+            height: 35px;
+            /* border: 2px solid white; */
+            border-radius: 50%;
+        }
+
+        .rightnav {
+            margin-right: 10px;
+            /* justify-content: flex-end; */
+        }
+
+        .rightnav input {
+            border: none;
+            outline: none;
+            border: 2px solid white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 20px;
+            background: none;
+            color: white;
+        }
+
+        .rightnav input:hover {
+            border-width: 2px 4px 5px 1px;
+        }
+
+        .rightnav .btnsearch {
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 5px;
+            background: none;
+            color: white;
+
+
+        }
+
+        .rightnav .btnsearch:hover {
+            background-color: white;
+            color: black;
+
+        }
+
+        .background {
+            background: rgba(0, 0, 0, 0.4) url('bg2.jpg');
+            background-size: cover;
+            background-blend-mode: darken;
+
+        }
+
+        .mainbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* height: 178vh; */
+            flex-direction: column;
+            /* margin-bottom: 20px; */
+
+        }
+
+        .firsthalf {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            max-width: 75vw;
+            font-size: 171%;
+            /* flex-wrap: wrap; */
+            margin-bottom: 23px;
+            min-width: 34vw;
+        }
+
+        .firsthalf img {
+            width: 110px;
+            height: 130px;
+        }
+
+        .firsthalf h2 {
+            margin-bottom: 10px;
+            margin-top: 150px;
+        }
+
+        /* .firsthalf #myvideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+
+        } */
+        .secondhalf {
+            margin-top: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 75vw;
+            font-size: 171%;
+            min-width: 30vw;
+            margin-bottom: 15px;
+            /* flex-wrap: wrap; */
+        }
+
+        .btnsub {
+            border: none;
+            outline: none;
+            border: 1px solid white;
+            color: white;
+            padding: 10px;
+            margin: 20px;
+            border-radius: 20px;
+            min-width: 30vh;
+            font-size: 120%;
+            /* background: none; */
+            cursor: pointer;
+            background: none;
+            margin-bottom: 180px;
+        }
+
+        .btnsub:hover {
+            color: inherit;
+            background-color: white;
+
+        }
+
+        /* .secondpage #myVideo {
+            min-width: 100%;
+            min-height: 100%;
+            /* z-index: 1; */
+        /* position: fixed;
+            position: fixed; */
+        .secondpage {
+            /* height: 195vh; */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+
+        .secondpage h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .mainsecondbox {
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            width: 80vw;
+            margin-top: 190px;
+            flex-direction: column;
+
+            /* flex-direction: row-reverse; */
+        }
+
+        .mainsecondbox>h1 {
+            color: red;
+            margin-bottom: 40px;
+        }
+
+        .mainsecondbox p {
+            font-size: 120%;
+        }
+
+        .mainsecondbox img {
+            width: 30%;
+            height: 30%;
+        }
+
+        .mainsecondbox img:hover {
+            border: 1px solid black;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+
+        }
+
+        .contactus {
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: violet;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contactus h1 {
+            font-size: 3rem;
+            /* color: yellow;
+             */
+            font-family: 'Righteous', cursive;
+
+        }
+
+        .contactus form {
+            display: flex;
+            flex-direction: column;
+            width: 50vw;
+            margin: 20px;
+            padding: 10px;
+            justify-content: center;
+            /* align-items: center; */
+        }
+
+        .contactus input {
+            margin: 20px;
+            padding: 20px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            text-align: center;
+            border: 1px solid purple;
+            font-size: 1rem;
+        }
+
+        .btnsubmit {
+            width: 30vw;
+            padding: 10px;
+            outline: none;
+            border: 2px solid purple;
+            background-color: transparent;
+            color: black;
+            border-radius: 20px;
+            border-width: 2px 4px 5px 1px;
+        }
+
+        .btnsubmit:hover {
+            background-color: purple;
+        }
+
+        .textfoot {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+
+        }
+
+        .burger {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            display: none;
+            cursor: pointer;
+
+        }
+
+        .line {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                transition: all 0.5s ease-out;
+
+            }
+
+            .background-resp {
+                background: rgba(0, 0, 0, 0.4) url('bg2.jpg');
+                background-size: cover;
+                background-blend-mode: darken;
+
+            }
+
+            .leftnav ul {
+                flex-direction: column;
+                margin: 20px;
+            }
+
+            .leftnav ul li {
+                margin: 10px;
+                border: 2px solid black;
+                background: white;
+                color: black;
+                border-radius: 20px;
+                padding: 5px;
+                width: 200px;
+
+            }
+
+            .leftnav ul li a {
+                color: black;
+            }
+
+
+            .rightnav {
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+
+            }
+
+            .rightnav .btnsearch {
+                background-color: black;
+                color: white;
+                width: 100px;
+                justify-content: center;
+            }
+
+            .rightnav input {
+                background-color: white;
+                color: black;
+                padding: 5px;
+                margin-bottom: 20px;
+                width: 300px;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .v-class {
+                opacity: 0;
+            }
+
+            .h-nav {
+                height: 40px;
+
+            }
+
+            .box-main {
+                width: 100%;
+                flex-direction: column;
+                /* height: 700px; */
+            }
+
+            .first-para h2 {
+                flex-wrap: wrap;
+                margin-top: 40px;
+                margin-bottom: 8px;
+                flex-wrap: inherit;
+            }
+
+            .first-para {
+                width: 450px;
+            }
+
+            .second-para h2 {
+                flex-wrap: wrap;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                flex-wrap: inherit;
+            }
+
+            .second-para {
+                width: 450px;
+            }
+
+        }
+
+        @media only screen and (max-width: 490px) {
+            .second-resp {
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            .second-resp h1 {
+                font-size: 32px;
+            }
+
+            .btnsubmit {
+                width: 30vw;
+            }
+
+            .contactus form {
+                width: 80vw;
+            }
+
+            .contactus h1 {
+                font-size: 2rem;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar background background-resp h-nav">
+        <div class="leftnav v-class">
+            <ul>
+                <img src="logo.png" alt="logo">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="rightnav v-class">
+            <input type="search" placeholder="search" contenteditable="type">
+            <button class="btnsearch">search</button>
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <section>
+        <div class="mainbox background background-resp box-main">
+            <div class="firsthalf first-para">
+                <h2>"Don't be trashy, keep it classy. Save the environment."</h2>
+                <p>Nature is a breathtaking masterpiece that never ceases to amaze us with its beauty and wonders. From
+                    the
+                    majestic mountains to the vast oceans, from the colorful rainbows to the sparkling stars, every part
+                    of
+                    nature is a unique expression of creation. It's the tranquil forests that provide us with fresh air,
+                    the
+                </p>
+
+            </div>
+            <div class="secondhalf second-para">
+                <h2>"In every walk with nature, one receives far more than he seeks."</h2>
+                <p>To prevent further harm, we must take action to protect nature and preserve
+                    the delicate balance of our environment. This means reducing our carbon footprint, conserving
+                    natural resources, and advocating for policies that prioritize the health of our planet. By working
+                    together to protect nature, we can ensure a healthy and sustainable future for ourselves and for
+                    generations to come.</p>
+            </div>
+            <button class="btnsub">SUBSCRIBE</button>
+        </div>
+    </section>
+    <section class="secondpage second-resp">
+
+        <div class="mainsecondbox">
+            <!-- <video autoplay muted loop id="myVideo">
+                <source src="clouds-64759.mp4" type="video/mp4">
+            </video> -->
+            <h1>"Keep the planet green and the air clean for a sustainable future."</h1>
+
+
+            <p> Nature is
+                the physical world around us, including all living and non-living things such as plants,
+                animals, rocks, mountains, oceans, and the atmosphere. It is the beauty and diversity of nature that
+                inspires and fascinates us. Nature provides us with the resources we need to sustain our lives, such as
+                food, water, and shelter. It also offers a peaceful and relaxing environment for us to escape the stress
+                and chaos of modern life.
+
+                Despite its many benefits, nature is facing many challenges due to human activities, including
+                deforestation, pollution, and climate change. As a result, it is crucial that we take steps to protect
+                and preserve our natural environment, so that future generations can also enjoy its beauty and bounty.
+
+                Spending time in nature has been shown to have many health benefits, such as reducing stress, improving
+                mood, and boosting overall well-being. By connecting with nature, we can gain a greater appreciation for
+                the world around us and the importance of protecting it for generations to come.
+            </p>
+            <img src="butterfly-1073707_1280.png" alt="butterfly">
+
+            <p>Nature is a precious gift that provides us with clean air, water, food, and a place to call home. It is
+                an intricate web of interconnected ecosystems that support life on our planet. However, human activities
+                such as deforestation, pollution, and climate change have put our natural world in peril. It is our
+                responsibility to protect and preserve nature for future generations. By taking small steps such as
+                reducing our carbon footprint, recycling, and supporting conservation efforts, we can help ensure a
+                sustainable future for ourselves and the countless species that depend on nature for survival. Let us
+                work together to appreciate and safeguard this invaluable resource, for it is only by protecting nature
+                that we can ensure a prosperous and healthy future for all.
+            </p>
+            <img src="butterfly-1073709_1280.png" alt="butterfly">
+
+
+        </div>
+        <h1>"Nature doesn't need us, but we need nature. Let's protect it."</h1>
+    </section>
+    <section class="contactus">
+        <h1>CONTACT US HERE!</h1>
+        <form class="froms">
+            <input type="text" placeholder="NAME">
+            <input type="email" placeholder="EMAIL">
+            <input type="tel" placeholder="PHONE NUMBER">
+        </form>
+        <div class="btn">
+            <button class="btnsubmit">SUBMIT</button>
+        </div>
+    </section>
+    <footer>
+        <div class="textfoot background background-resp">
+            copyright &copy; all rights are reserved | 2017
+        </div>
+    </footer>
+    <script src="resp.js"></script>
+
+</body>
+
+</html>
